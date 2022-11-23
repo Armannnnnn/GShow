@@ -11,15 +11,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 
 	public File d;
-	public File config;
 	public FileConfiguration dc;
 
 	@Override
 	public void onEnable() {
-		this.getConfig().options().copyDefaults(true);
-		this.saveConfig();
+		this.saveDefaultConfig();
 		this.getServer().getPluginManager().registerEvents(new Events(this), this);
-		config = new File(this.getDataFolder(), "config.yml");
 		this.createData();
 		this.getCommand("gshow").setExecutor(new Commands(this));
 
@@ -43,4 +40,5 @@ public class Main extends JavaPlugin {
 			e.printStackTrace();
 		}
 	}
+
 }
