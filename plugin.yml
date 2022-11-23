@@ -1,6 +1,6 @@
 name: GShow
 main: me.arman.gshow.Main
-version: 1.0
+version: 1.0.1
 description: Group-based message whitelisting.
 author: Arman
 prefix: GroupIgnore
