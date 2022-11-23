@@ -19,9 +19,9 @@ public class Events implements Listener {
 	}
 
 	@EventHandler
-	public void onPlayerCahat(AsyncPlayerChatEvent e) {
+	public void onPlayerChat(AsyncPlayerChatEvent e) {
 		Player sender = e.getPlayer();
-		for (Player p : e.getRecipients()) {
+		for (Player p : Bukkit.getServer().getOnlinePlayers()) {
 			if (p.getName() != sender.getName()) {
 				if (plugin.dc.getBoolean(p.getUniqueId() + ".enabled")) {
 					if (!plugin.dc.getStringList(p.getUniqueId() + ".whitelist").isEmpty()) {
