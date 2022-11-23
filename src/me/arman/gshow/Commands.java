@@ -77,11 +77,7 @@ public class Commands implements CommandExecutor {
 								"&cYou do not have permission to run this command."));
 						return true;
 					}
-					try {
-						plugin.getConfig().save(plugin.config);
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
+					plugin.reloadConfig();
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aReloaded the configuration file."));
 				} else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cCommands:"));
